@@ -8,7 +8,7 @@ def role_selection(_session):
     role_df = _session.sql('show roles;').collect()
     role_df = pd.DataFrame(role_df)
     role_list = role_df['name']
-    st.write(role_list)
+    st.write('role_list')
     role_select = st.sidebar.selectbox('Select a Role', role_list)
     if st.sidebar.button('Use Role'):
         set_role = _session.sql(f'''USE ROLE {role_select} ;''').collect()
