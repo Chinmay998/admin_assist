@@ -6,6 +6,7 @@ import streamlit as st
 st.title('User Management')
 def role_selection(_session):
     role_df = _session.sql('show roles;').collect()
+    st.write(role_df)
     role_df = pd.DataFrame(role_df)
     role_list = role_df['name']
     st.write('role_list')
