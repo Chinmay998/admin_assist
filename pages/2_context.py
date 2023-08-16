@@ -30,8 +30,11 @@ from snowflake.snowpark.functions import *
 import pandas as pd
 import streamlit as st
 
-def role_selection(session):
-    role_df = session.sql('show roles;').collect()  # Use session instead of _session
+# ... (other imports and code)
+
+def role_selection():
+    session = st.session_state['session']  # Retrieve the session from session_state
+    role_df = session.sql('show roles;').collect()
     role_df = pd.DataFrame(role_df)
     role_list = role_df['name']
     st.write(role_list)  # Display the role list
@@ -40,8 +43,9 @@ def role_selection(session):
         set_role = session.sql(f'''USE ROLE {role_select};''').collect()
         return set_role
 
-def warehouse_selection(session):
-    warehouse_df = session.sql('show warehouses;').collect()  # Use session instead of _session
+def warehouse_selection():
+    session = st.session_state['session']  # Retrieve the session from session_state
+    warehouse_df = session.sql('show warehouses;').collect()
     warehouse_df = pd.DataFrame(warehouse_df)
     st.write(warehouse_df)  # Display the warehouse DataFrame
     warehouse_list = warehouse_df['name']
@@ -52,9 +56,8 @@ def warehouse_selection(session):
 
 # Call the functions to display the content
 if __name__ == "__main__":
-    session = st.session_state['Session']  # Retrieve the session from session_state
-    role_selection(session)
-    warehouse_selection(session)
+    role_selection()
+    warehouse_selection()
 
 
 
