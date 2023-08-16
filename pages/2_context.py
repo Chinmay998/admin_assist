@@ -7,5 +7,5 @@ def wh_list(session):
 
 def data_selector():
     session = st.session_state['Session']
-    database = wh_list(session)
-
+    warehouse = wh_list(session)
+    db_select = st.selectbox('Choose warehouse',(warehouse))
