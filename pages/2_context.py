@@ -1,3 +1,4 @@
+import streamlit as st
 def wh_list(session):
     warehouse_list_df = session.sql("show warehouses ;").collect()
     warehouse_list_df =  pd.DataFrame(warehouse_list_df)
