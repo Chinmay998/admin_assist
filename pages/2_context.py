@@ -1,3 +1,7 @@
+import configparser
+from snowflake.snowpark import Session
+from snowflake.snowpark.functions import *
+import pandas as pd
 import streamlit as st
 def wh_list(session):
     warehouse_list_df = session.sql("show warehouses ;").collect()
