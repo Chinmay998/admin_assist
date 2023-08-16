@@ -22,7 +22,7 @@ def sfAccount_selector(_config):
     # elif account == 'CMACGM':
     #     sfAccount = _config['Accounts']['Infosys']
     # else:
-        sfAccount = st.text_input("Enter Account")
+    sfAccount = st.text_input("Enter Account")
     st.session_state['sfAccount'] = sfAccount
     sfUser = st.text_input("Enter Username")
     st.session_state['sfUser'] = sfUser    
