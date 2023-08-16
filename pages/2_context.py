@@ -34,7 +34,7 @@ st.title('User Management')
 
 # Define your Snowflake session setup here
 
-def role_selection(_session):
+def role_selection(session):
     role_df = _session.sql('show roles;').collect()
     role_df = pd.DataFrame(role_df)
     role_list = role_df['name']
@@ -44,7 +44,7 @@ def role_selection(_session):
         set_role = _session.sql(f'''USE ROLE {role_select};''').collect()
         return set_role
 
-def warehouse_selection(_session):
+def warehouse_selection(session):
     warehouse_df = _session.sql('show warehouses;').collect()
     warehouse_df = pd.DataFrame(warehouse_df)
     st.write(warehouse_df)  # Display the warehouse DataFrame
@@ -58,8 +58,8 @@ def warehouse_selection(_session):
 if __name__ == "__main__":
     # Initialize your Snowflake session here
     
-    role_selection(_session)
-    warehouse_selection(_session)
+    role_selection(session)
+    warehouse_selection(session)
 
 
 
