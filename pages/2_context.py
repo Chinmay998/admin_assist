@@ -21,14 +21,5 @@ def warehouse_selection(_session):
     warehouse_select = st.sidebar.selectbox('Select a Role', warehouse_list)
     if st.sidebar.button('Use Warehouse'):
         set_warehouse = _session.sql(f'''USE WAREHOUSE {warehouse_select} ;''').collect()
-try:
-    session = st.session_state['Session']
-    set_role = role_selection(session)
-    if set_role != '':
-        warehouse_selection(session)
-    
-    current_role = session.sql('select current_role();').collect()
-    current_role
-    current_warehouse = session.sql('select current_warehouse();').collect()
-    current_warehouse
+
 
