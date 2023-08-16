@@ -4,3 +4,8 @@ def wh_list(session):
     warehouse_list_df = warehouse_list_df["name"]
     return warehouse_list_df
 
+
+def data_selector():
+    session = st.session_state['Session']
+    database = wh_list(session)
+
