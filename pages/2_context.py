@@ -9,4 +9,4 @@ def data_selector():
     session = st.session_state['Session']
     warehouse = wh_list(session)
     wh_select = st.selectbox('Choose warehouse',(warehouse))
-    return session, db_select,
+    return session, wh_select
