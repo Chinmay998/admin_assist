@@ -16,12 +16,12 @@ config.read('config.ini')
 def sfAccount_selector(_config):
     #setup config.ini read rules
  
-    account = st.selectbox("Select an account to connect",['Infosys','CMACGM','Personal Account'])
-    if account == 'Infosys':
-        sfAccount = _config['Accounts']['Infosys']
-    elif account == 'CMACGM':
-        sfAccount = _config['Accounts']['Infosys']
-    else:
+    # account = st.selectbox("Select an account to connect",['Infosys','CMACGM','Personal Account'])
+    # if account == 'Infosys':
+    #     sfAccount = _config['Accounts']['Infosys']
+    # elif account == 'CMACGM':
+    #     sfAccount = _config['Accounts']['Infosys']
+    # else:
         sfAccount = st.text_input("Enter Account")
     st.session_state['sfAccount'] = sfAccount
     sfUser = st.text_input("Enter Username")
