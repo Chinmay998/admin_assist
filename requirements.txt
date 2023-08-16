@@ -1,4 +1,4 @@
-snowflake-connector-python==2.8.0
+snowflake-connector-python==2.7.9
 snowflake-snowpark-python== 1.5.0
 pyxlsb==1.0.10
 openpyxl==3.0.10
