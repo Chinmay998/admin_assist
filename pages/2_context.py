@@ -10,4 +10,8 @@ def data_selector():
     session = st.session_state['Session']
     warehouse = wh_list(session)
     wh_select = st.selectbox('Choose warehouse',(warehouse))
-    return session, wh_select
+    tables = tables_list(wh_select, session)
+    if list(tables) != []:
+        table_select = st.selectbox('Choose table',(tables))
+        return session, db_select,table_select
+
