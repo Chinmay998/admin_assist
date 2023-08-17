@@ -6,10 +6,8 @@ import streamlit as st
 st.title('User Management')
 def role_selection(_session):
     role_df = _session.sql('show roles;').collect()
-    st.write(role_df)
     role_df = pd.DataFrame(role_df)
     role_list = role_df['name']
-    st.write('role_list')
     role_select = st.sidebar.selectbox('Select a Role', role_list)
     if st.sidebar.button('Use Role'):
         set_role = _session.sql(f'''USE ROLE {role_select} ;''').collect()
@@ -18,7 +16,7 @@ def role_selection(_session):
 def warehouse_selection(_session):
     warehouse_df = _session.sql('show warehouses;').collect()
     warehouse_df = pd.DataFrame(warehouse_df)
-    warehouse_df
+    
     warehouse_list = warehouse_df['name']
     warehouse_select = st.sidebar.selectbox('Select a Role', warehouse_list)
     if st.sidebar.button('Use Warehouse'):
