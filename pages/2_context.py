@@ -54,10 +54,10 @@ def warehouse_selection(_session):
 #         set_warehouse = session.sql(f'''USE WAREHOUSE {warehouse_select};''').collect()
 #         return set_warehouse
 
-# # Call the functions to display the content
-# if __name__ == "__main__":
-#     role_selection()
-#     warehouse_selection()
+# Call the functions to display the content
+if __name__ == "__main__":
+    role_selection()
+    warehouse_selection()
 
 
 
