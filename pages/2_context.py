@@ -31,7 +31,7 @@ def warehouse_selection(session):
 
 if __name__ == "__main__":
     session = st.session_state['Session'] 
-     role_selection(session)
+    role_selection(session)
     warehouse_selection(session)
 
 
