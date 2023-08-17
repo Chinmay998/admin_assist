@@ -4,7 +4,7 @@ from snowflake.snowpark.functions import *
 import pandas as pd
 import streamlit as st
 st.title('User Management')
-def role_selection(_session):
+def role_selection(session):
     role_df = _session.sql('show roles;').collect()
     role_df = pd.DataFrame(role_df)
     role_list = role_df['name']
@@ -14,7 +14,7 @@ def role_selection(_session):
         st.session_state.selected_role = role_select
         
 
-def warehouse_selection(_session):
+def warehouse_selection(session):
     warehouse_df = _session.sql('show warehouses;').collect()
     warehouse_df = pd.DataFrame(warehouse_df)
     
