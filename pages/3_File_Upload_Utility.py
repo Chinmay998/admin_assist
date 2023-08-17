@@ -14,7 +14,10 @@ st.set_page_config(
 
 st.title('File Upload Utility')
 
-
+def main():
+    # Access the selected role and warehouse from session_state
+    selected_role = st.session_state.selected_role
+    selected_warehouse = st.session_state.selected_warehouse
 
 def db_list(session):
     database_list_df = session.sql("show databases ;").collect()
