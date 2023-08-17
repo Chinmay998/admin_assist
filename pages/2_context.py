@@ -11,7 +11,8 @@ def role_selection(_session):
     role_select = st.sidebar.selectbox('Select a Role', role_list)
     if st.sidebar.button('Use Role'):
         set_role = _session.sql(f'''USE ROLE {role_select} ;''').collect()
-        return set_role
+        st.session_state.selected_role = role_select
+        
 
 def warehouse_selection(_session):
     warehouse_df = _session.sql('show warehouses;').collect()
@@ -21,6 +22,7 @@ def warehouse_selection(_session):
     warehouse_select = st.sidebar.selectbox('Select a Role', warehouse_list)
     if st.sidebar.button('Use Warehouse'):
         set_warehouse = _session.sql(f'''USE WAREHOUSE {warehouse_select} ;''').collect()
+        st.session_state.selected_warehouse = warehouse_select
 
 
 
