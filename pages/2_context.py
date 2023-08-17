@@ -56,9 +56,9 @@ def warehouse_selection(_session):
 
 # Call the functions to display the content
 if __name__ == "__main__":
-    session = st.session_state['session'] 
-    role_selection(session)
-    warehouse_selection(session)
+    session = st.session_state['Session'] 
+    role_selection(Session)
+    warehouse_selection(Session)
 
 
 
