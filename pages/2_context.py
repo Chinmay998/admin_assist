@@ -16,19 +16,19 @@ def role_selection(session):
 
 def warehouse_selection(session):
     try:
-    warehouse_df = session.sql('show warehouses;').collect()
-    warehouse_df = pd.DataFrame(warehouse_df)
+        warehouse_df = session.sql('show warehouses;').collect()
+        warehouse_df = pd.DataFrame(warehouse_df)
     
-    warehouse_list = warehouse_df['name']
-    warehouse_select = st.sidebar.selectbox('Select a Role', warehouse_list)
-    if st.sidebar.button('Use Warehouse'):
-        set_warehouse = session.sql(f'''USE WAREHOUSE {warehouse_select} ;''').collect()
-        st.session_state.selected_warehouse = warehouse_select
+        warehouse_list = warehouse_df['name']
+        warehouse_select = st.sidebar.selectbox('Select a Role', warehouse_list)
+        if st.sidebar.button('Use Warehouse'):
+            set_warehouse = session.sql(f'''USE WAREHOUSE {warehouse_select} ;''').collect()
+            st.session_state.selected_warehouse = warehouse_select
     
     except exception as e:
-    st.sidebar.error(f"Error fetching warehouse: {e})
-    warehouse_list = [] #clear the warehouse list
-    warehouse_select = st.sidebar.selectbox('Select a Warehouse', warehouse_list)
+        st.sidebar.error(f"Error fetching warehouse: {e})
+        warehouse_list = [] #clear the warehouse list
+        warehouse_select = st.sidebar.selectbox('Select a Warehouse', warehouse_list)
 
 
 
