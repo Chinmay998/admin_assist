@@ -3,7 +3,7 @@ from snowflake.snowpark import Session
 from snowflake.snowpark.functions import *
 import pandas as pd
 import streamlit as st
-st.title('User Management')
+st.title('CONTEXT')
 def role_selection(session):
     role_df = session.sql('show roles;').collect()
     role_df = pd.DataFrame(role_df)
