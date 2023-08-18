@@ -8,7 +8,10 @@ st.set_page_config(
 )
 
 st.title('User Management')
-
+def main():
+    # Access the selected role and warehouse from session_state
+    selected_role = st.session_state.selected_role
+    selected_warehouse = st.session_state.selected_warehouse
 def get_user_list(_session):
     user_list_df = _session.sql("SELECT *,datediff('day',last_success_login,current_timestamp()) as last_success_login_days FROM snowflake.account_usage.USERS WHERE DELETED_ON IS NULL;").collect()
     pd_user_list_df = pd.DataFrame(user_list_df)
