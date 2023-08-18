@@ -26,7 +26,7 @@ def warehouse_selection(session):
             st.session_state.selected_warehouse = warehouse_select
     
     except Exception as e:
-        st.sidebar.error(f"Error fetching warehouse: {e}")
+        #st.sidebar.error(f"Error fetching warehouse: {e}")
         warehouse_list = [] #clear the warehouse list
         warehouse_select = st.sidebar.selectbox('Select a Warehouse', warehouse_list)
 
