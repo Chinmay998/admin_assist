@@ -10,3 +10,6 @@ apps = {
 
 selected_app = st.selectbox("Select an Application", list(apps.keys()))
 selected_app_url = apps[selected_app]
+
+st.write(f"Displaying {selected_app}")
+st.iframe(selected_app_url, width=800, height=600)
