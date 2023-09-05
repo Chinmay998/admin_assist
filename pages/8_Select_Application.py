@@ -1,5 +1,4 @@
 import streamlit as st
-from st.components.v1 import iframe
 
 apps = {
     "App 1": "https://github.com/Chinmay998/admin_assist/raw/main/pages/2_Context.py",
@@ -13,4 +12,4 @@ selected_app = st.selectbox("Select an Application", list(apps.keys()))
 selected_app_url = apps[selected_app]
 
 st.write(f"Displaying {selected_app}")
-st.iframe(selected_app_url, width=800, height=600)
+st.write(f'<iframe src="{selected_app_url}" width="800" height="600"></iframe>', unsafe_allow_html=True)
