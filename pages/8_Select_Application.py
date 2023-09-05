@@ -1,7 +1,7 @@
 import streamlit as st
 
 apps = {
-    "App 1": "URL_TO_APP_1_RAW",
+    "App 1": "https://github.com/Chinmay998/admin_assist/raw/main/pages/2_Context.py",
     "App 2": "URL_TO_APP_2_RAW",
     "App 3": "URL_TO_APP_3_RAW",
     "App 4": "URL_TO_APP_4_RAW",
