@@ -1,4 +1,5 @@
 import streamlit as st
+from st.components.v1 import iframe
 
 apps = {
     "App 1": "https://github.com/Chinmay998/admin_assist/raw/main/pages/2_Context.py",
