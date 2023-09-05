@@ -5,7 +5,7 @@ apps = {
     "App 2": "https://raw.githubusercontent.com/Chinmay998/admin_assist/main/pages/4_Over_Under_Size_File_Identifier.py",
     "App 3": "https://raw.githubusercontent.com/Chinmay998/admin_assist/main/pages/3_File_Upload_Utility.py",
     "App 4": "https://raw.githubusercontent.com/Chinmay998/admin_assist/main/pages/5_User_Management.py",
-    "App 5": "URL_TO_APP_5_RAW",
+    "App 5": "https://raw.githubusercontent.com/Chinmay998/admin_assist/main/pages/6_Log_Out.py",
 }
 
 selected_app = st.selectbox("Select an Application", list(apps.keys()))
