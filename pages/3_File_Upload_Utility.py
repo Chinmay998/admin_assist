@@ -21,7 +21,7 @@ def main():
 current_role = session.sql('select current_role();').collect()
 current_role
 current_warehouse = session.sql('select current_warehouse();').collect()
-    current_warehouse
+current_warehouse
 
 def db_list(session):
     database_list_df = session.sql("show databases ;").collect()
