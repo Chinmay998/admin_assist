@@ -19,7 +19,7 @@ def main():
     selected_role = st.session_state.selected_role
     selected_warehouse = st.session_state.selected_warehouse
 current_role = session.sql('select current_role();').collect()
-    current_role
+current_role
 current_warehouse = session.sql('select current_warehouse();').collect()
     current_warehouse
 
