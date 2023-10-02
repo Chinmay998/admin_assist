@@ -15,7 +15,7 @@ def get_off_size_files(_session):
                                     count(C.TABLE_ID) as FileCount,\
                                     avg(FILE_SIZE) / 1024 / 1024 as AvgFileSize_MB\
                                 FROM\
-                                snowflake.account_usage.copy_history_program C\
+                                snowflake.account_usage.copy_history C\
                                 LEFT JOIN snowflake.account_usage.tables T ON C.TABLE_ID = T.TABLE_ID\
                                 WHERE DELETED IS NOT NULL\
                                 GROUP BY 1,2 \
